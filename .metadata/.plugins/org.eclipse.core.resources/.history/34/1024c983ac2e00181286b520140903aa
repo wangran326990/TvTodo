@@ -1,0 +1,7 @@
+package com.tvtodo.services;
+
+public interface ISubscribedShowService {
+	public boolean updateShowUpdateTime(Date date);
+		
+
+}

@@ -1,0 +1,69 @@
+package com.tvtodo.models;
+
+import java.util.Date;
+import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="t_subscribed_show")
+public class SubscribedShow {
+	private int id;
+	private int showId;
+	private Date lastUpdateDate;
+	private String showName;
+	private String showImageLink;
+	private String countryCode;
+	private List<User> users;
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public int getShowId() {
+		return showId;
+	}
+	public void setShowId(int showId) {
+		this.showId = showId;
+	}
+	public Date getLastUpdateDate() {
+		return lastUpdateDate;
+	}
+	public void setLastUpdateDate(Date lastUpdateDate) {
+		this.lastUpdateDate = lastUpdateDate;
+	}
+	public String getShowName() {
+		return showName;
+	}
+	public void setShowName(String showName) {
+		this.showName = showName;
+	}
+	public String getShowImageLink() {
+		return showImageLink;
+	}
+	public void setShowImageLink(String showImageLink) {
+		this.showImageLink = showImageLink;
+	}
+	public String getCountryCode() {
+		return countryCode;
+	}
+	public void setCountryCode(String countryCode) {
+		this.countryCode = countryCode;
+	}
+	@ManyToMany(mappedBy="subscribedShows")
+	public List<User> getUsers() {
+		return users;
+	}
+	public void setUsers(List<User> users) {
+		this.users = users;
+	}
+}

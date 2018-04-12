@@ -1,0 +1,6 @@
+package com.tvtodo.dto;
+
+public class AjaxResponse <T> {
+	private T response;
+	private String errorMessage;
+}

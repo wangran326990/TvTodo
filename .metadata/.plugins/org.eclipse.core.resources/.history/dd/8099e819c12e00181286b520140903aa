@@ -1,0 +1,8 @@
+package com.tvtodo.services;
+
+import com.tvtodo.constants.LoginEnum;
+
+public interface ILoginService {
+	
+	public LoginEnum doLogin(String username);
+}

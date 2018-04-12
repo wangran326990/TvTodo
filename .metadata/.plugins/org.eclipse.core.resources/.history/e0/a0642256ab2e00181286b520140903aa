@@ -1,0 +1,5 @@
+package com.tvtodo.services;
+
+public interface ISubscribedShowService {
+
+}

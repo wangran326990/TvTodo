@@ -1,0 +1,59 @@
+package com.tvtodo.services;
+
+import java.util.HashSet;
+import java.util.List;
+
+import javax.annotation.Resource;
+import javax.servlet.http.HttpSession;
+
+import org.springframework.stereotype.Service;
+
+import com.tvtodo.constants.LoginEnum;
+import com.tvtodo.dao.SubscribedShowDao;
+import com.tvtodo.dao.UserDao;
+import com.tvtodo.dto.AjaxResponse;
+import com.tvtodo.models.SubscribedShow;
+import com.tvtodo.models.User;
+@Service("loginService")
+public class LoginService implements ILoginService {
+	@Resource(name ="userDao")		
+	private UserDao userDao;
+	@Resource(name ="subscribedShowDao")
+	private SubscribedShowDao SubscribedShowDao;
+	
+	@Override
+	public AjaxResponse<User> doLogin(String username, String password, HttpSession session) {
+		User user = userDao.getUserByName(username);
+		
+		if(user==null){
+			return new AjaxResponse<User>(null, LoginEnum.USER_NOT_EXIST.toString());
+		}else{
+			
+			
+			if(user.getPassword().equals(password)){
+				List<SubscribedShow> subscribedShowList = SubscribedShowDao.getSubscribedShowsByUserId(user.getId());
+				user.setSubscribedShows(new HashSet<>(subscribedShowList));
+				return new AjaxResponse<User>(user, "");
+			}
+			return new AjaxResponse<User>(null, LoginEnum.LOGIN_FAIL.toString());
+		}
+	}
+
+	@Override
+	public boolean isUserLogin(String username, HttpSession session) {
+		// TODO Auto-generated method stub
+		User user = (User)session.getAttribute("loginUser");
+		if(user.getUserName().equals(username)){
+			return true;
+		}
+		return false;
+	}
+
+	@Override
+	public boolean doLogout(HttpSession session) {
+		// TODO Auto-generated method stub
+		session.invalidate();
+		return true;
+	}
+
+}

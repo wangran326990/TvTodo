@@ -1,0 +1,30 @@
+package com.tvtodo.dao;
+
+import com.tvtodo.models.SubscribedShow;
+
+public class SubscribedShowDao extends BaseDao<SubscribedShow> implements ISubscribedShowDao {
+
+	@Override
+	public SubscribedShow add( SubscribedShow show) {
+		
+		return super.add(show);
+	}
+
+	@Override
+	public void update(SubscribedShow show) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void delete(int id) {
+
+	}
+
+	@Override
+	public void getAShowById(int id) {
+
+	}
+
+
+}

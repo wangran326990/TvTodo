@@ -1,0 +1,6 @@
+package com.tvtodo.dao;
+
+public interface IUserDao {
+	public void add(User user);
+	public void update();
+}

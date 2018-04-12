@@ -1,0 +1,12 @@
+package com.tvtodo.models;
+
+import java.util.Date;
+
+public class SubscribedShow {
+	private int id;
+	private int showId;
+	private Date lastUpdateDate;
+	private String showName;
+	private String showImageLink;
+	private String countryCode;
+}

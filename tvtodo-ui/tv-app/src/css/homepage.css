@@ -1,0 +1,43 @@
+#footer{
+    position:fixed;
+    bottom:0;
+}
+
+#search-button-row{
+    margin-top:40px;
+}
+.left{
+    text-align: left;
+}
+
+.search-bar-title{
+    color: rgb(0, 188, 212);
+    text-align: center;
+    font-family: 'Lobster', cursive;
+    font-size: 25px;
+    font-weight: 200;
+}
+
+#search-country-title-bar, #search-show-title-bar{
+    margin-top:20px;
+}
+
+.show-list-top{
+    margin-top:10px;
+}
+
+#subscribe-body-title{
+    color: rgb(0, 188, 212);
+    text-align: center;
+    font-family: 'Lobster', cursive;
+    font-size: 25px;
+    font-weight: 200;
+}
+.card-top{
+    margin-top:15px;
+}
+.menu-text{
+    text-align: center;
+    color: rgb(0, 188, 212);
+    font-family: 'Lobster', cursive;
+}

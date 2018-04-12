@@ -1,0 +1,72 @@
+package com.tvtodo.api;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
+
+import org.springframework.http.converter.json.GsonBuilderUtils;
+import org.springframework.web.client.RestTemplate;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.tvtodo.jsondeserializer.JsonDeserializerHelper;
+import com.tvtodo.models.Show;
+import com.tvtodo.models.ShowWithScore;
+
+import java.lang.reflect.Type;
+import com.google.gson.reflect.TypeToken;
+
+public class TvShowAPI implements ITvSearchAPI {
+
+	private RestTemplate restTemplate;
+	private static TvSearchAPI tvSearchAPI = null;
+	private static final String url = "http://api.tvmaze.com/";
+	private  TvShowAPI() {
+		
+	}
+	
+	private  TvShowAPI(RestTemplate restTemplate) {
+			this.restTemplate = restTemplate;
+	}
+	
+	public static synchronized TvSearchAPI getInstance(RestTemplate restTemplate) {
+		if(tvSearchAPI==null){
+			tvSearchAPI = new TvSearchAPI(restTemplate);
+		}
+		return tvSearchAPI;
+	}
+	@Override
+	public String searchShowJsonResultByName(String name) {
+		String urlString = url+"singlesearch/shows?q="+name;
+		String show = this.restTemplate.getForObject(urlString, String.class, 200);
+		return show;
+	}
+	
+	@Override
+	public Show searchShowByName(String name){
+		String json = this.searchShowJsonResultByName(name);
+		Gson gson = new Gson();
+		Show show = gson.fromJson(json, Show.class);
+		return show;
+	}
+
+	@Override
+	public String searchShowsJsonResultByName(String name) {
+		String urlString = url+"search/shows?q="+name;
+		String shows = this.restTemplate.getForObject(urlString, String.class, 200);
+		return shows;
+	}
+
+	@Override
+	public List<Show> searchShowsByName(String name) {
+		String json = this.searchShowsJsonResultByName(name);
+		//System.out.println(json);
+		Type listType =new TypeToken<ArrayList<ShowWithScore>>(){}.getType();
+		List<ShowWithScore> list = new Gson().fromJson(json, listType);
+		return list.stream().map((showWithScore)-> showWithScore.getShow()).collect(Collectors.toList());
+	}
+	
+	public 
+	
+}

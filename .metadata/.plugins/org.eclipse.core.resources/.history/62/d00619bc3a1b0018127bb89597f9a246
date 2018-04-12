@@ -1,0 +1,16 @@
+package com.tvtodo.api;
+
+import java.util.List;
+
+import com.tvtodo.models.Show;
+
+public interface ITvSeasonAPI {
+	public String searchSeasonJsonResultById(int id);
+	
+	public Show searchSeasonByName(String name);
+	
+	public String searchShowsJsonResultByName(String name);
+	
+	public List<Show> searchShowsByName(String name);
+	
+}

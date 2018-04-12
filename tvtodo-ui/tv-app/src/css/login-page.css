@@ -1,0 +1,21 @@
+#login-form {
+    margin-top:40px;
+}
+#login-appbar{
+    text-align: center;
+}
+
+#page-title{
+    color: rgb(0, 188, 212);
+    text-align: center;
+    font-family: 'Lobster', cursive;
+    font-size:50px;
+    font-weight: 200;
+}
+#error-message{
+    color: rgb(244, 67, 54);
+    text-align: center;
+    font-family: 'Lobster', cursive;
+    font-size:20px;
+    font-weight: 200;
+}

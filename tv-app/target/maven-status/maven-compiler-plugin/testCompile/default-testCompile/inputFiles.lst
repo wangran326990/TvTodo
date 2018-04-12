@@ -1,0 +1,7 @@
+/home/wr/workspace/TvTodo/tv-app/src/test/java/com/tvtodo/api/TvScheduledAPITest.java
+/home/wr/workspace/TvTodo/tv-app/src/test/java/com/tvtodo/api/JsonDeserializerHelperTest.java
+/home/wr/workspace/TvTodo/tv-app/src/test/java/com/tvtodo/api/JsonSerializerHelperTest.java
+/home/wr/workspace/TvTodo/tv-app/src/test/java/com/tvtodo/api/TvSeasonAPITest.java
+/home/wr/workspace/TvTodo/tv-app/src/test/java/com/tvtodo/api/TvShowAPITest.java
+/home/wr/workspace/TvTodo/tv-app/src/test/java/com/tvtodo/dao/SubscribedShowTest.java
+/home/wr/workspace/TvTodo/tv-app/src/test/java/com/tvtodo/dao/UserDaoTest.java

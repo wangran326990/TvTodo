@@ -1,0 +1,5 @@
+1519918621171	Rename type 'TvSearchAPITest'
+1519918646535	Rename type 'TvShowsAPI'
+1519918721035	Rename type 'TvShowAPI'
+1519923968598	Encapsulate field 'genres'
+1519925200618	Encapsulate field 'time'

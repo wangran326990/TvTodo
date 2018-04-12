@@ -1,0 +1,29 @@
+package com.tvtodo.dao;
+
+import com.tvtodo.models.User;
+
+public interface IUserDao {
+	/**
+	 *  add a user
+	 */
+	public void add(User user);
+	
+	/**
+	 * update user's information
+	 * @param user
+	 */
+	public void update(User user);
+	
+	/**
+	 * delete user's information by user id
+	 * @param id
+	 */
+	public void delete(int id);
+	
+	/**
+	 * get user by username
+	 * 
+	 */
+	
+	public User get(String username);
+}

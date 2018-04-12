@@ -1,0 +1,17 @@
+package com.tvtodo.constants;
+
+public enum LoginEnum {
+	LOGIN_SUCCESS("login success");
+	
+	private final String info;
+	
+	
+	 LoginEnum(String info){
+		this.info =info;
+	 }
+
+
+	public String getInfo() {
+		return info;
+	}
+}

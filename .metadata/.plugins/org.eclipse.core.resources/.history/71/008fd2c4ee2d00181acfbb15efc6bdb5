@@ -1,0 +1,5 @@
+package com.tvtodo.dao;
+
+public interface ISubscribedShowDao {
+	
+}

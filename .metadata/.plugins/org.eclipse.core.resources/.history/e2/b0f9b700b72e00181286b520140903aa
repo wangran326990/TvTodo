@@ -1,0 +1,33 @@
+package com.tvtodo.services;
+
+import java.util.Date;
+
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Service;
+
+import com.tvtodo.dao.SubscribedShowDao;
+import com.tvtodo.models.SubscribedShow;
+@Service("subscribedShowService")
+public class SubscribedShowService implements ISubscribedShowService {
+
+	
+	private SubscribedShowDao subscribedShowDao;
+	
+	@Override
+	public boolean updateShowUpdateTime(Date date, int sid) {
+		SubscribedShow show = subscribedShowDao.get(sid);
+		show.setLastUpdateDate(date);
+		return subscribedShowDao.update(show);
+	}
+
+	public SubscribedShowDao getSubscribedShowDao() {
+		return subscribedShowDao;
+	}
+	
+	@Resource(name="subscribedShowDao")
+	public void setSubscribedShowDao(SubscribedShowDao subscribedShowDao) {
+		this.subscribedShowDao = subscribedShowDao;
+	}
+
+}

@@ -1,0 +1,74 @@
+package com.tvtodo.dao;
+
+
+import java.util.List;
+import java.util.Set;
+
+import org.hibernate.collection.internal.PersistentSet;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.tvtodo.models.SubscribedShow;
+import com.tvtodo.models.User;
+
+@Repository(value="userDao")
+public class UserDao extends BaseDao<User> implements IUserDao {
+
+	@Override
+	public User getUserByName(String username) {
+		try {
+				
+		String hql = "from User ur left join fetch ur.subscribedShows where ur.userName =?";
+		User user = (User)super.getSession()
+						  .createQuery(hql)
+						  .setParameter(0, username)
+						  .uniqueResult();
+//		User result = new User();
+//		result.setFirstName(user.getFirstName());
+//		result.setLastName(user.getLastName());
+//		result.setId(user.getId());
+//		result.setUserName(user.getUserName());
+//		result.setPassword(user.getPassword());
+//		result.setLastLogoutDate(user.getLastLogoutDate());
+		
+		PersistentSet set = (PersistentSet)user.getSubscribedShows();
+		return result;
+		} catch (Exception e) {
+			return null;
+		}
+	}
+	
+	/**
+	 *  add a user
+	 */
+	@Override
+	public User add(User user){
+		return super.add(user);
+	}
+	
+	/**
+	 * update user's information
+	 * @param user
+	 */
+	@Override
+	public void update(User user){
+		super.update(user);
+	}
+	
+	/**
+	 * delete user's information by user id
+	 * @param id
+	 */
+	@Override
+	public void delete(int id){
+		super.delete(id);
+	}
+
+	@Override
+	public List<User> listUsers() {
+		String hql ="from User ur left join fetch ur.subscribedShows";
+		return super.list(hql);
+	}
+	
+	
+}

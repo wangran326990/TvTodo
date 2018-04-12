@@ -1,0 +1,7 @@
+com/tvtodo/dao/UserDaoTest.class
+com/tvtodo/api/JsonSerializerHelperTest.class
+com/tvtodo/api/JsonDeserializerHelperTest.class
+com/tvtodo/api/TvScheduledAPITest.class
+com/tvtodo/dao/SubscribedShowTest.class
+com/tvtodo/api/TvSeasonAPITest.class
+com/tvtodo/api/TvShowAPITest.class

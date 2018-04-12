@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<typeInfoHistroy>
+<typeInfo handle="=tv-app/src\/main\/java&lt;com.tvtodo.api{ITvSeasonAPI.java[ITvSeasonAPI" modifiers="513" timestamp="1519680865000"/>
+<typeInfo handle="=tv-app/src\/main\/java&lt;com.tvtodo.api{TvSeasonAPI.java[TvSeasonAPI" modifiers="1" timestamp="1519927978000"/>
+<typeInfo handle="=tv-app/src\/main\/java&lt;com.tvtodo.api{ITvScheduledAPI.java[ITvScheduledAPI" modifiers="513" timestamp="1521303160000"/>
+<typeInfo handle="=tv-app/src\/main\/java&lt;com.tvtodo.api{TvScheduledAPI.java[TvScheduledAPI" modifiers="1" timestamp="1521467718000"/>
+<typeInfo handle="=tv-app/src\/main\/java&lt;com.tvtodo.dao{IUserDao.java[IUserDao" modifiers="513" timestamp="1521811603000"/>
+<typeInfo handle="=tv-app/src\/main\/java&lt;com.tvtodo.dao{UserDao.java[UserDao" modifiers="1" timestamp="1522092758000"/>
+<typeInfo handle="=tv-app/src\/main\/java&lt;com.tvtodo.dao{BaseDao.java[BaseDao" modifiers="1" timestamp="1521647400000"/>
+<typeInfo handle="=tv-app/src\/main\/java&lt;com.tvtodo.dao{ISubscribedShowDao.java[ISubscribedShowDao" modifiers="513" timestamp="1522093027000"/>
+<typeInfo handle="=tv-app/src\/main\/java&lt;com.tvtodo.dao{SubscribedShowDao.java[SubscribedShowDao" modifiers="1" timestamp="1522110718000"/>
+</typeInfoHistroy>

@@ -1,0 +1,55 @@
+package com.tvtodo.models;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="t_user")
+public class User {
+	private String id;
+	private String userName;
+	private String password;
+	private String firstName;
+	private String lastName;
+	
+	@Column(name="username")
+	@NotNull(message="username is required")
+	public String getUserName() {
+		return userName;
+	}
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+	@Column(name="password")
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public String getFirstName() {
+		return firstName;
+	}
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+	public String getLastName() {
+		return lastName;
+	}
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+	
+	public String getId() {
+		return id;
+	}
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	public void setId(String id) {
+		this.id = id;
+	}
+}

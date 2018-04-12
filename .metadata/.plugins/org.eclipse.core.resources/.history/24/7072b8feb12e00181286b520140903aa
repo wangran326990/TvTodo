@@ -1,0 +1,13 @@
+package com.tvtodo.services;
+
+import java.util.Date;
+
+public class SubscribedShowService implements ISubscribedShowService {
+
+	@Override
+	public boolean updateShowUpdateTime(Date date) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

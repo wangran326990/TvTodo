@@ -1,0 +1,23 @@
+package com.tvtodo.controllers;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.tvtodo.dao.IUserDao;
+
+@Controller(value="testController")
+public class TestController {
+	
+	private IUserDao userDao;
+	@RequestMapping(value="/addUser",method=RequestMethod.GET)
+	public void addUser(){
+		
+	}
+	public IUserDao getUserDao() {
+		return userDao;
+	}
+	public void setUserDao(IUserDao userDao) {
+		this.userDao = userDao;
+	}
+}

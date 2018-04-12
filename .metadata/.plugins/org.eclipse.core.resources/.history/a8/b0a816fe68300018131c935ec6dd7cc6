@@ -1,0 +1,5 @@
+package com.tvtodo.dto;
+
+public class AjaxResponse {
+
+}

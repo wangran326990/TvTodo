@@ -1,0 +1,14 @@
+package com.tvtodo.services;
+
+import javax.servlet.http.HttpSession;
+
+import com.tvtodo.constants.LoginEnum;
+
+public interface ILoginService {
+	
+	public LoginEnum doLogin(String username, HttpSession session);
+	
+	public boolean isUserLogin(String username, HttpSession session);
+	
+	public boolean doLogout(HttpSession session);
+}

@@ -1,0 +1,16 @@
+package com.tvtodo.controllers;
+
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.tvtodo.services.UserService;
+
+@RestController("userController")
+public class UserController {
+	@Resource(name="userService")
+	private UserService userService;
+	
+	
+}

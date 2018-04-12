@@ -1,0 +1,63 @@
+package com.tvtodo.dao;
+
+import static org.junit.Assert.*;
+
+import javax.annotation.Resource;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+import com.tvtodo.models.User;
+
+
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration("/beans-core.xml")
+public class UserDaoTest {
+	
+	private IUserDao userDao; 
+		
+	@Test
+	public void testGet() {
+		User user = userDao.getUserByName("username");
+		assertEquals(user.getId(), 1);
+	}
+
+	@Test
+	public void testAdd() {
+		User user = new User();
+		user.setUserName("username");
+		user.setLastName("Wang");
+		user.setLastName("Ran");
+		user.setPassword("123");
+		userDao.add(user);
+		
+	}
+
+	@Test
+	public void testUpdate() {
+		User user = new User();
+		user.setId(1);
+		user.setUserName("username12");
+		user.setLastName("Wang123");
+		user.setFirstName("Ran");
+		user.setPassword("123");
+		userDao.add(user);
+	}
+
+	@Test
+	public void testDelete() {
+		fail("Not yet implemented");
+	}
+
+	public IUserDao getUserDao() {
+		return userDao;
+	}
+	
+	@Resource(name="userDao")
+	public void setUserDao(IUserDao userDao) {
+		this.userDao = userDao;
+	}
+
+}

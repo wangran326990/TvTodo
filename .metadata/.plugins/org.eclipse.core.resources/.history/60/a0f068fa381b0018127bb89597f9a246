@@ -1,0 +1,12 @@
+package com.tvtodo.api;
+
+import org.springframework.web.client.RestTemplate;
+
+class TvTodoAPIFactory {
+	private static final RestTemplate restTemplate = new RestTemplate();
+	
+	public static ITvSearchAPI getTvSearchAPI(){
+		return TvSearchAPI.getInstance(restTemplate);
+	}
+	
+}

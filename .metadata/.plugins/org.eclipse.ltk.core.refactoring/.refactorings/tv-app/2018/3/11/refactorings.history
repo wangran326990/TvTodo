@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Encapsulate field &apos;com.tvtodo.models.Episode.show&apos; in &apos;com.tvtodo.models.Episode&apos;&#x0A;- Original project: &apos;tv-app&apos;&#x0A;- Original element: &apos;com.tvtodo.models.Episode.show&apos;&#x0A;- Getter method name: &apos;getShow&apos;&#x0A;- Setter method name: &apos;setShow&apos;&#x0A;- Field visibility: &apos;public&apos;&#x0A;- Use getter and setter methods in declaring type" comments="false" declaring="true" description="Encapsulate field &apos;show&apos;" flags="589830" getter="getShow" id="org.eclipse.jdt.ui.self.encapsulate" input="/src\/main\/java&lt;com.tvtodo.models{Episode.java[Episode^show" insertion="21" setter="setShow" stamp="1521306923945" version="1.0" visibility="1"/>
+</session>

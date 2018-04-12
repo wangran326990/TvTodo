@@ -1,0 +1,13 @@
+1521594338838	Encapsulate field 'id'
+1521628337794	Delete element
+1521628724555	Encapsulate field 'userDao'
+1521644516899	Encapsulate field 'userDao'
+1521674101513	Encapsulate field 'lastLogoutDate'
+1521677017018	Encapsulate field 'users'
+1521677435091	Encapsulate field 'subscribedShow'
+1521737754132	Encapsulate field 'user'
+1521768456386	Rename compilation unit 'SubscribedShow.java'
+1521810563056	Encapsulate field 'country'
+1521822137169	Encapsulate field 'subscribedShowDao'
+1521825994765	Encapsulate field 'info'
+1521837616388	Delete element

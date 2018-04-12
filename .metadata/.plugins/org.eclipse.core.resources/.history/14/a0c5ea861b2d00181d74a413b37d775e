@@ -1,0 +1,20 @@
+package com.tvtodo.dao;
+
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.tvtodo.models.User;
+@Repository(value="userDao")
+@Transactional()
+public class UserDao extends BaseDao<User> implements IUserDao {
+
+	@Override
+	public User getUserByName(String username) {
+		String hql = "from User where User.userName =?";
+		return (User)super.getSession()
+						  .createQuery(hql)
+						  .setParameter(0, username)
+						  .uniqueResult();
+	}
+
+}

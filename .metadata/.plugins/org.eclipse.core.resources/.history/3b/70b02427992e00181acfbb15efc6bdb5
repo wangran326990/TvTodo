@@ -1,0 +1,12 @@
+package com.tvtodo.services;
+
+import org.springframework.stereotype.Service;
+
+import com.tvtodo.dao.SubscribedShowDao;
+import com.tvtodo.dao.UserDao;
+
+@Service(value="userService")
+public class UserService {
+	private UserDao userDao;
+	private SubscribedShowDao;
+}

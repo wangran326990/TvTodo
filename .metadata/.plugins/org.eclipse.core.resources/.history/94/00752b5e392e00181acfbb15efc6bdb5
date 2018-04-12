@@ -1,0 +1,29 @@
+package com.tvtodo.dao;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class SubscribedShow {
+
+	@Test
+	public void testDelete() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testAddSubscribedShow() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testUpdateSubscribedShow() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testGetAShowById() {
+		fail("Not yet implemented");
+	}
+
+}

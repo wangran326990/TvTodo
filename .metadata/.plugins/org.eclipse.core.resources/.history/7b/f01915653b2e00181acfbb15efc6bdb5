@@ -1,0 +1,72 @@
+package com.tvtodo.dao;
+
+import static org.junit.Assert.*;
+
+import java.util.Date;
+
+import javax.annotation.Resource;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+import com.tvtodo.models.SubscribedShow;
+import com.tvtodo.models.User;
+
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration("/beans-core.xml")
+public class SubscribedShowTest {
+	SubscribedShowDao subscribedShowDao;
+	
+	UserDao  userDao;
+	
+	@Test
+	public void testDelete() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testAddSubscribedShow() {
+		if(userDao==null){
+			System.out.println("fail");
+		}
+		User user  = userDao.get(1);
+		SubscribedShow show = new SubscribedShow();
+		show.setCountryCode("US");
+		show.setLastUpdateDate(new Date());
+		show.setShowId(139);
+		show.setShowImageLink("http://static.tvmaze.com/uploads/images/original_untouched/31/78286.jpg");
+		show.setShowName("Girls");
+		show.setUser(user);
+		subscribedShowDao.add(show);
+	}
+
+	@Test
+	public void testUpdateSubscribedShow() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testGetAShowById() {
+		fail("Not yet implemented");
+	}
+	
+	public SubscribedShowDao getSubscribedShowDao() {
+		return subscribedShowDao;
+	}
+	@Resource(name="subscribedShowDao")
+	public void setSubscribedShowDao(SubscribedShowDao subscribedShowDao) {
+		this.subscribedShowDao = subscribedShowDao;
+	}
+
+	public UserDao getUserDao() {
+		return userDao;
+	}
+	@Resource(name="userDao")
+	public void setUserDao(UserDao userDao) {
+		this.userDao = userDao;
+	}
+
+
+}

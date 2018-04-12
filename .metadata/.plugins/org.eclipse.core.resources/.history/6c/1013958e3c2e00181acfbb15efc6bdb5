@@ -1,0 +1,97 @@
+package com.tvtodo.dao;
+
+import static org.junit.Assert.*;
+
+import java.util.Date;
+
+import javax.annotation.Resource;
+
+import org.aspectj.lang.annotation.Before;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.junit.After;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.orm.hibernate5.SessionHolder;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.transaction.support.TransactionSynchronizationManager;
+
+import com.tvtodo.models.SubscribedShow;
+import com.tvtodo.models.User;
+
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration("/beans-core.xml")
+public class SubscribedShowTest {
+	
+	@Resource(name="sessionFactory")
+	private SessionFactory sessionFactory;
+	
+	ISubscribedShowDao subscribedShowDao;
+	IUserDao  userDao;
+	
+	@org.junit.Before
+	public void setUp() {
+		
+		Session s = sessionFactory.openSession();
+		TransactionSynchronizationManager.bindResource(sessionFactory, new SessionHolder(s));
+		
+	
+	}
+	
+	@Test
+	public void testDelete() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testAddSubscribedShow() {
+		if(userDao==null){
+			System.out.println("fail");
+		}
+		User user  = userDao.getUserByName("username123");
+		SubscribedShow show = new SubscribedShow();
+		show.setCountryCode("US");
+		show.setLastUpdateDate(new Date());
+		show.setShowId(139);
+		show.setShowImageLink("http://static.tvmaze.com/uploads/images/original_untouched/31/78286.jpg");
+		show.setShowName("Girls");
+		show.setUser(user);
+		subscribedShowDao.add(show);
+	}
+
+	@Test
+	public void testUpdateSubscribedShow() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testGetAShowById() {
+		fail("Not yet implemented");
+	}
+	
+	public ISubscribedShowDao getSubscribedShowDao() {
+		return subscribedShowDao;
+	}
+	@Resource(name="subscribedShowDao")
+	public void setSubscribedShowDao(ISubscribedShowDao subscribedShowDao) {
+		this.subscribedShowDao = subscribedShowDao;
+	}
+
+	public IUserDao getUserDao() {
+		return userDao;
+	}
+	@Resource(name="userDao")
+	public void setUserDao(IUserDao userDao) {
+		this.userDao = userDao;
+	}
+	@After
+	public void tearDown() throws Exception {
+		
+		SessionHolder holder = (SessionHolder) TransactionSynchronizationManager.getResource(sessionFactory);
+		Session s = holder.getSession(); 
+		s.flush();
+		TransactionSynchronizationManager.unbindResource(sessionFactory);
+	}
+
+}

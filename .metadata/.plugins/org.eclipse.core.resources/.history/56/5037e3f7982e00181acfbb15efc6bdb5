@@ -1,0 +1,8 @@
+package com.tvtodo.services;
+
+import org.springframework.stereotype.Service;
+
+@Service(value="userService")
+public class UserService {
+
+}

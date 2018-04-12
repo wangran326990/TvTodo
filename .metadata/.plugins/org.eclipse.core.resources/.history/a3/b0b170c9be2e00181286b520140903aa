@@ -1,0 +1,9 @@
+package com.tvtodo.constants;
+
+public enum LoginEnum {
+	
+	
+		 LoginEnum(){
+			
+		 }
+}
